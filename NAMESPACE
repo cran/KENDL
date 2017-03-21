@@ -1,0 +1,5 @@
+exportPattern("^[^\\.]")
+S3method(plot,KRKM)
+S3method(KRKM,default)
+importFrom("graphics", "plot", "points")
+importFrom("stats", "sd")
