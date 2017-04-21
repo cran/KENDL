@@ -14,22 +14,22 @@ NULL, log="x", xlab = NULL, ylab = "CDF", \dots)
 }
 \arguments{
   \item{x}{
-    An object of class \code{KRKM} which is retured by the \code{KRKM} function.
+    An object of class \code{KRKM} which is returned by the \code{KRKM} function.
   }
   \item{conf.int}{
     Determines whether confidence intervals will be plotted.  The default value
-    is TRUE.
+    is TRUE.  
   }
-
+  
   \item{lty}{
-    An integer specifying line type. The default value is 1.
+    An integer specifying line type. The default value is 1. 
   }
   \item{col}{
-    An integer specifying color type. The default value is 1.
+    An integer specifying color type. The default value is 1.     
   }
   \item{lwd}{
-    A numeric value specifying line width. The default value is 1.
-  }
+    A numeric value specifying line width. The default value is 1.     
+  }  
 
    \item{xlim}{
     A vector specifying the lower and upper boundaries for x values.
@@ -38,14 +38,14 @@ NULL, log="x", xlab = NULL, ylab = "CDF", \dots)
     A vector specifying the lower and upper boundaries for y values.
   }
   \item{log}{
-  	One of the standard character strings ``x", ``y", or ``xy" to specify logarithmic horizontal and/or vertical axes. The default value is ``x".
-  }
+  	One of the standard character strings "x", "y", or "xy" to specify logarithmic horizontal and/or vertical axes. The default value is "x". Use log="" to specify no logarithmic scale used for either horizontal or vertical axes. 
+  } 
 
   \item{xlab}{
     Label given to the x-axis with NULL as default.
   }
   \item{ylab}{
-    Label given to the y-axis with ``CDF" as default.
+    Label given to the y-axis with "CDF" as default.
   }
   \item{\dots}{
     Other arguments allowed for the general \code{plot} function.
@@ -68,7 +68,7 @@ KRKM
  t   <- exp(-3.05+0.42*lod+e)
  obs <- pmax(t, lod)
  bdl <- t<lod
-# KRKM estimator
+# KRKM estimator 
  fit <- KRKM(obs=obs, bdl=bdl, lod=lod)
  plot(fit)
 }

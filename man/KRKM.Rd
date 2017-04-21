@@ -9,18 +9,18 @@ Calculate the exposure distribution based on the kernel reverse Kaplan-Meier(KRK
 
 }
 \usage{
-KRKM(obs, bdl, lod,method='formula',b=1000)
+KRKM(obs, bdl, lod, method='formula', b=1000)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{obs}{
-A vector of observations which are the exposure levels if the subject's exposure level can be detected, and the detection limits otherwise.
+A vector of observations which are the exposure levels if the subject's exposure level can be detected, and the detection limits otherwise. 
 }
   \item{bdl}{
-A logical vector indicating TRUE 1 if the subject's exposure level is below the detection limit, and FALSE otherwise.
+A logical vector indicating TRUE if the subject's exposure level is below the detection limit, and FALSE otherwise. 
 }
   \item{lod}{
-A vector of detection limits.
+A vector of detection limits. 
 }
 
   \item{method}{
@@ -38,12 +38,19 @@ probabilities at the points below which there are few observations.
 }
 \value{
  \item{unique.obs}{
-A vector of unique observations in the argument \code{obs}.
+A vector of unique observations in the argument \code{obs}. 
 }
  \item{cdf}{A vector of estimates for the cumulative distribution function (cdf) at the points given by \code{unique.obs}.}
  \item{se}{A vector of standard error estimates for the cdf estimates}
  \item{lower}{A vector of 95\% lower confidence limits of the cdf values}
  \item{upper}{A vector of 95\% upper confidence limits of the cdf values}
+}
+
+\references{
+  Yang Y, Shelton BJ, Tucker TC, Li L, Kryscio RJ, Chen L. (2017).
+  Estimation of Exposure Distribution Adjusting for Association between Exposure Level and Detection Limit.
+  \emph{Statistics in Medicine.}
+  Provisionally Accepted.
 }
 
 \author{
@@ -54,7 +61,7 @@ Yuchen Yang, Li Chen
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-plot.KRKM, summary.KRKM
+plot.KRKM
 }
 \examples{
 # simulated data set from a lognormal regression model
@@ -63,7 +70,7 @@ plot.KRKM, summary.KRKM
  t   <- exp(-3.05+0.42*lod+e)
  obs <- pmax(t, lod)
  bdl <- t<lod
-# KRKM estimator
+# KRKM estimator 
  fit <- KRKM(obs=obs, bdl=bdl, lod=lod)
 }% Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
